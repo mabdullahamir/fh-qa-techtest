@@ -3,19 +3,16 @@ import {inventoryPage} from '../suaceEstore_Pages/InventoryPage';
 import {cartPage} from '../suaceEstore_Pages/CartPage';
 import {checkoutPage} from '../suaceEstore_Pages/CheckoutPage';
 
-let user;
 
-describe('Saucedemo - End to end Purchase Flow', function () {
+describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
   before(function () {
     cy.visit('/')
-    cy.fixture('users').then((data) => {
-      user = data
-    })
+    cy.fixture('users').as('user')
   })
 
-  it('should complete purchase successfully', () => {
+  it('Should complete purchase successfully including login, product selection, checkout, and order completion', function () {
     // Login
-    loginPage.login(user.standard.username, user.standard.password)
+    loginPage.login(this.user.standard.username, this.user.standard.password)
 
     // Select a product & go to cart
     inventoryPage.selectProduct('Sauce Labs Backpack');
@@ -31,7 +28,8 @@ describe('Saucedemo - End to end Purchase Flow', function () {
     inventoryPage.goToCart();
     cartPage.verifyProductInCart('Sauce Labs Bolt T-Shirt');
     cartPage.checkout();
-
+    
+    //Complete order info & finish
     checkoutPage.fillUserInfo('John', 'Smith', '12345');
     checkoutPage.finishCheckout();
 
