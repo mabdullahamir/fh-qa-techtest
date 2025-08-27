@@ -1,0 +1,14 @@
+{
+  "name": "fh-qa-techtest",
+  "version": "1.0.0",
+  "description": "An end-to-end automation project using Cypress to automate the end to end flow of purchasing any product.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.0.0"
+  }
+}
