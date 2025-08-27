@@ -2,7 +2,7 @@ import {loginPage} from '../suaceEstore_Pages/LoginPage';
 import {inventoryPage} from '../suaceEstore_Pages/InventoryPage';
 import {cartPage} from '../suaceEstore_Pages/CartPage';
 import {checkoutPage} from '../suaceEstore_Pages/CheckoutPage';
-//import user from '../fixtures/users.json';
+
 let user;
 
 describe('Saucedemo - End to end Purchase Flow', function () {
