@@ -1,4 +1,5 @@
-class CartPage {
+
+export class CartPage {
   verifyProductInCart(productName) {
     cy.get('[data-test="inventory-item-name"]').contains(productName).should('be.visible');
   }
@@ -15,4 +16,3 @@ class CartPage {
       cy.get('[data-test="continue-shopping"]').click();
     }
 }
-export const cartPage = new CartPage;

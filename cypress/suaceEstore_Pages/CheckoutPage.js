@@ -1,4 +1,5 @@
-class CheckoutPage {
+
+export class CheckoutPage {
   fillUserInfo(firstName, lastName, postalCode) {
     cy.get('[data-test="firstName"]').clear().type(firstName);
     cy.get('[data-test="lastName"]').clear().type(lastName);
@@ -53,4 +54,3 @@ class CheckoutPage {
    cy.get('[data-test="logout-sidebar-link"]').contains('Logout').should('be.visible').click();
   }
 }
-export const checkoutPage = new CheckoutPage;

@@ -1,4 +1,5 @@
-class InventoryPage {
+
+export class InventoryPage {
   selectProduct(productName) {
     cy.get('[data-test="inventory-item-name"]').contains(productName).click();
    
@@ -14,4 +15,3 @@ class InventoryPage {
   }
 
 }
-export const inventoryPage = new InventoryPage;

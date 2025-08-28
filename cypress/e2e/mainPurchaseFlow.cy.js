@@ -1,7 +1,12 @@
-import {loginPage} from '../suaceEstore_Pages/LoginPage';
-import {inventoryPage} from '../suaceEstore_Pages/InventoryPage';
-import {cartPage} from '../suaceEstore_Pages/CartPage';
-import {checkoutPage} from '../suaceEstore_Pages/CheckoutPage';
+import {LoginPage} from '../suaceEstore_Pages/LoginPage';
+import {InventoryPage} from '../suaceEstore_Pages/InventoryPage';
+import {CartPage} from '../suaceEstore_Pages/CartPage';
+import {CheckoutPage} from '../suaceEstore_Pages/CheckoutPage';
+
+const loginPage = new LoginPage();
+const cartPage = new CartPage();
+const inventoryPage = new InventoryPage();
+const checkoutPage = new CheckoutPage();
 
 
 describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
