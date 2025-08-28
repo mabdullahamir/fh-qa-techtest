@@ -12,8 +12,8 @@ To set up and run the project, make sure that the following are installed on you
 >**Note**: It is recommended to stick with Cypress v14.x for stability.
 >**Note**: Node.js versions 18 and 23 are no longer officially supported by Cypress, so it's better to have an LTS version from above.
 
-## 2. Setup Instructions
-To clone the repo and install Cypress, run the commands mentioned below in the terminal and follow the steps.
+## 2. Setup Instructions 
+To clone the repo and install Cypress, open VS Code, run the commands mentioned below in the terminal, and follow the steps.
 1. Clone the repository:
   ```
 - git clone <repository-url>
@@ -25,7 +25,10 @@ To clone the repo and install Cypress, run the commands mentioned below in the t
  - npm install
 ```
 
-3. Open Cypress Test Runner (interactive mode):
+## 3. Steps to run the Test
+To run the test, you need to follow the steps below,
+
+Run the command below to open Cypress Test Runner to run in interactive mode:
   ```
    - npx cypress open
   ```
@@ -33,13 +36,13 @@ To clone the repo and install Cypress, run the commands mentioned below in the t
 - On the next step, it will ask to choose a browser, select Electron or Chrome, and click the Start E2E Testing button
 - Now in Cypress Runner, you will be seeing main.cy.js. Click on it, and the test will start to execute.
 
-4. Run Cypress tests in headless mode:
+Or, to Run Cypress tests in headless mode:
    ```
    - npx cypress run
    ```
 - After running the above command, the test will start to run in a headless(non-GUI) mode, and you will be notified of it in the terminal.
 
-## 3. Test Scenario
+## 4. Test Scenario
 The automation covers an **end-to-end flow of purchasing a product** on [saucedemo.com](https://www.saucedemo.com/):
 
 - Log in to the store
@@ -49,7 +52,7 @@ The automation covers an **end-to-end flow of purchasing a product** on [saucede
 - Complete the customer information
 - Verify the Total
 - Validate a successful message on order confirmation
-- Access the sidepanel menu and Log out
+- Access the sidepanel menu and log out
   
 The automation covers some **negative cases** on [saucedemo.com](https://www.saucedemo.com/):
 
@@ -60,14 +63,14 @@ The automation covers some **negative cases** on [saucedemo.com](https://www.sau
 **Additionally**, tried to add a negative flow as checkout with an empty cart, which shouldn't be allowed; however, this constraint is not handled in the web-app
   
 
-## 4. Design Pattern & Approach
+## 5. Design Pattern & Approach
 - Implemented **Page Object Model (POM)** for maintainability and scalability.
 - Test data managed using **fixtures** (`users.json`).
 - Reusable selectors and commands are abstracted into page objects for readability.
 
 
 
-## 5. To Do (If More Time Were Available)
+## 6. To Do (If More Time Were Available)
 - Add test cases for Login for the rest of the users
 - Add test cases for multiple product purchases
 - Add test cases for product validation, like its name, description, and price
