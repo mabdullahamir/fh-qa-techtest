@@ -13,13 +13,14 @@ describe('Negative Flows', () => {
   it('Should show error message on invalid credentials', function () {
     // Attempt login with invalid credentials
     loginPage.login(this.user.wrongUser.username, this.user.wrongUser.password);
+    
     // Assert error message is displayed
     loginPage.unsuccessfulLogin();
    
   });
 
 
-   it('Should show error if customer information is missing', function () {
+   it('Should show error if customer information is not added', function () {
     // Login
     loginPage.login(this.user.standard.username, this.user.standard.password);
 
