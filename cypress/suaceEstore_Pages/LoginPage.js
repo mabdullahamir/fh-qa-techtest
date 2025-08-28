@@ -23,9 +23,5 @@ class LoginPage {
       .and('contain', 'Username is required');
   }
 
-  logout() {
-    cy.get('button[id="react-burger-menu-btn"]').click();
-   cy.get('[data-test="logout-sidebar-link"]').click();
-  }
 }
 export const loginPage = new LoginPage;

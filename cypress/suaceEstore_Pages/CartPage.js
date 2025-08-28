@@ -1,6 +1,6 @@
 class CartPage {
   verifyProductInCart(productName) {
-    cy.contains('.inventory_item_name', productName).should('be.visible');
+    cy.get('[data-test="inventory-item-name"]').contains(productName).should('be.visible');
   }
 
   checkout() {
@@ -8,8 +8,9 @@ class CartPage {
   }
 
   removeProductFromCart(productName) {
-    cy.contains('.inventory_item_name', productName)
-      .parents('.cart_item')
+      cy.get('[data-test="inventory-item-name"]')
+      .contains(productName)
+      .parents('[data-test="inventory-item"]')
       .find('button').click();
       cy.get('[data-test="continue-shopping"]').click();
     }

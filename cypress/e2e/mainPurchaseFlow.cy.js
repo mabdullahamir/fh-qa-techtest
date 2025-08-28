@@ -38,8 +38,8 @@ describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
     //Thank you message
     checkoutPage.verifyOrderComplete();
 
-    // Logout
-    loginPage.logout();
+    // Access the sidepanel menu and Logout
+    checkoutPage.logout();
   });
 
 });

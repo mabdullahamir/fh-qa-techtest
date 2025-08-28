@@ -47,5 +47,10 @@ class CheckoutPage {
   getError() {
     cy.get('[data-test="error"]').should('contain', 'Error: First Name is required')
   }
+  
+  logout() {
+    cy.get('button[id="react-burger-menu-btn"]').click();
+   cy.get('[data-test="logout-sidebar-link"]').contains('Logout').should('be.visible').click();
+  }
 }
 export const checkoutPage = new CheckoutPage;
