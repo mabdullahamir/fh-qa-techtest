@@ -57,7 +57,7 @@ The automation covers some **negative cases** on [saucedemo.com](https://www.sau
 - Log in with an invalid Username and Password
 - Checking out without filling in the customer info
 
-**Additionally**, I was trying to add a negative flow as checkout with an empty cart, which shouldn't be allowed; however, this constraint is not handled in the web-app
+**Additionally**, tried to add a negative flow as checkout with an empty cart, which shouldn't be allowed; however, this constraint is not handled in the web-app
   
 
 ## 4. Design Pattern & Approach
