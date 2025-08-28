@@ -31,12 +31,15 @@ describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
     cartPage.checkout();
     
     //Complete order info, check total & finish
-    checkoutPage.fillUserInfo('John', 'Smith', '12345');
+    checkoutPage.fillUserInfo('Deckard', 'Shaw', '12345');
     checkoutPage.calculateTotal();
     checkoutPage.finishCheckout();
 
     //Thank you message
     checkoutPage.verifyOrderComplete();
+
+    // Logout
+    loginPage.logout();
   });
 
 });

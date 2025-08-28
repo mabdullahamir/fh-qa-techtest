@@ -10,9 +10,19 @@ describe('Negative Flows', () => {
     cy.fixture('users').as('user')
   })
 
+  it('Should show error message on empty credentials', function () {
+    // Attempt login with empty credentials 
+    loginPage.loginButton();
+
+    // Assert error message is displayed
+    loginPage.loginWithoutCredentials();
+    
+});
+
   it('Should show error message on invalid credentials', function () {
     // Attempt login with invalid credentials
     loginPage.login(this.user.wrongUser.username, this.user.wrongUser.password);
+
     // Assert error message is displayed
     loginPage.unsuccessfulLogin();
    
