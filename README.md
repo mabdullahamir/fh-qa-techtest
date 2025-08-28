@@ -7,7 +7,7 @@ To set up and run the project, make sure that the following are installed on you
 - **Node.js** (v22.11.0 was used in this project. The currently supported Node.js versions for Cypress are Node.js 20, 22, 24, and above.)
 - **npm** (comes with Node.js)
 - **Cypress** (v14.0.0 was used in this project — v15.x is not stable and may cause issues)
-- **Visual Studio Code** (Or a code-editor of your choice)
+- **Visual Studio Code** (Or a code editor of your choice)
 
 >**Note**: It is recommended to stick with Cypress v14.x for stability.
 >**Note**: Node.js versions 18 and 23 are no longer officially supported by Cypress, so it's better to have an LTS version from above.
@@ -46,8 +46,19 @@ The automation covers an **end-to-end flow of purchasing a product** on [saucede
 - Select a product and add to cart
 - Remove product from cart and go back to inventory
 - Select another product, add to cart, and proceed to checkout
-- Complete the order information
-- Validate successful message order confirmation
+- Complete the customer information
+- Verify the Total
+- Validate a successful message on order confirmation
+- Access the sidepanel menu and Log out
+  
+The automation covers some **negative cases** on [saucedemo.com](https://www.saucedemo.com/):
+
+- Login without credentials
+- Log in with an invalid Username and Password
+- Checking out without filling in the customer info
+
+**Additionally**, tried to add a negative flow as checkout with an empty cart, which shouldn't be allowed; however, this constraint is not handled in the web-app
+  
 
 ## 4. Design Pattern & Approach
 - Implemented **Page Object Model (POM)** for maintainability and scalability.
@@ -57,11 +68,10 @@ The automation covers an **end-to-end flow of purchasing a product** on [saucede
 
 
 ## 5. To Do (If More Time Were Available)
-- Add negative test cases for Login, like invalid username, invalid password
-- Add negative test cases for cart, like to checkout without a product
-- Add negative test cases for checkout information fields, like checking out by entering mandatory fields
+- Add test cases for Login for the rest of the users
+- Add test cases for multiple product purchases
+- Add test cases for product validation, like its name, description, and price
 - Add parameterized tests to reduce code duplication, such as testing multiple users from fixtures
-- Increase coverage for different product variations and cart workflows
 - Improve test structure by moving more common steps into custom Cypress commands
 
 ---
