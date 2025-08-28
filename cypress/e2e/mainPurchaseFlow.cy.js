@@ -13,6 +13,7 @@ describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
   it('Should complete purchase successfully including login, product selection, checkout, and order completion', function () {
     // Login
     loginPage.login(this.user.standard.username, this.user.standard.password)
+    loginPage.checkUrl();
 
     // Select a product & go to cart
     inventoryPage.selectProduct('Sauce Labs Backpack');
@@ -29,11 +30,13 @@ describe('Saucedemo E-Store - End-to-End Purchasing Flow', function () {
     cartPage.verifyProductInCart('Sauce Labs Bolt T-Shirt');
     cartPage.checkout();
     
-    //Complete order info & finish
+    //Complete order info, check total & finish
     checkoutPage.fillUserInfo('John', 'Smith', '12345');
+    checkoutPage.calculateTotal();
     checkoutPage.finishCheckout();
 
     //Thank you message
     checkoutPage.verifyOrderComplete();
   });
+
 });
